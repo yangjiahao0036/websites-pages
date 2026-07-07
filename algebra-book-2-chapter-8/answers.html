@@ -42,13 +42,22 @@ li { margin: 5px 0; padding-left: 3px; }
 .formula-block { margin: 13px 0 18px; border: 1px solid var(--line); border-left: 6px solid var(--accent2); border-radius: 8px; background: linear-gradient(90deg, #f5f9ff, #fbfdff); overflow: hidden; }
 .formula-mark { font-size: 12px; color: #52616f; background: #e8f0fb; padding: 5px 12px; border-bottom: 1px solid var(--line); letter-spacing: 0.04em; }
 .formula-body { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: 17px; line-height: 1.75; padding: 12px 15px; color: #102a43; white-space: normal; }
+.formula-note { padding: 8px 11px 0; color: #52616f; font-size: 15px; font-weight: 700; }
 .math-inline { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; background: #f2f6fa; border: 1px solid var(--line); border-radius: 5px; padding: 1px 6px; color: #102a43; white-space: nowrap; }
 .answer-card { margin: 24px 0; padding: 20px 22px 22px; border: 1px solid #cfd9e6; border-radius: 8px; background: #ffffff; box-shadow: 0 8px 22px rgba(31, 41, 51, 0.07); break-inside: avoid; }
 .answer-card h2 { margin: 0 0 15px; padding: 0 0 10px; border-left: 0; border-bottom: 1px solid var(--line); color: #164e63; }
 .answer-card p:first-of-type { margin-top: 0; }
-.answer-card .formula-block { margin: 8px 0 12px; border: 0; border-left: 3px solid #b8c6d8; border-radius: 4px; background: #f8fafc; box-shadow: none; }
+.answer-card .formula-block { margin: 6px 0 11px 14px; padding: 0; border: 0 !important; border-left: 0 !important; border-radius: 0; background: transparent !important; box-shadow: none; overflow: visible; }
 .answer-card .formula-mark { display: none; }
-.answer-card .formula-body { padding: 8px 11px; font-size: 16px; line-height: 1.68; color: #1f2933; }
+.answer-card .formula-note { padding: 0 0 2px; color: #52616f; font-size: 15px; font-weight: 700; }
+.answer-card .formula-body { padding: 0; font-size: 16px; line-height: 1.72; color: #1f2933; }
+.answer-card .formula-note + .formula-body { padding-top: 0; }
+.answer-card .math-inline { background: transparent; border: 0; border-radius: 0; padding: 0; color: inherit; font-family: inherit; white-space: normal; }
+.answer-card .question-line { margin-top: 14px; margin-bottom: 7px; color: #102a43; }
+.answer-process { margin: 7px 0 15px; padding: 8px 13px; border-left: 4px solid #8aa4c2; background: #f8fafc; color: #243b53; }
+.answer-process p { margin: 6px 0 9px; }
+.answer-process .formula-block { margin: 6px 0 11px 0; }
+.answer-process .formula-note { color: #3f5f7f; }
 @media (max-width: 880px) {
   .layout { display: block; padding: 0; }
   .toc { position: static; max-height: none; border-radius: 0; border-left: 0; border-right: 0; }
@@ -91,260 +100,298 @@ li { margin: 5px 0; padding-left: 3px; }
 <h1 id="代数-第2册-第八章精选练习题答案详解">《代数 第2册》第八章精选练习题答案详解</h1>
 <section class="answer-card" id="1-判断是否为一元二次方程">
 <h2>1. 判断是否为一元二次方程</h2>
-<p>(1) <span class="math-inline">3x² - 2x + 1 = 0</span></p>
+<p class="question-line"><strong>(1) <span class="math-inline">3x² - 2x + 1 = 0</span></strong></p>
+<blockquote class="answer-process">
 <p>这是关于 <span class="math-inline">x</span> 的整式方程，只含一个未知数，最高次数是 2，并且二次项系数 <span class="math-inline">3 ≠ 0</span>，所以是一元二次方程。</p>
-<p>(2) <span class="math-inline">x + 1/x = 2</span></p>
+</blockquote>
+<p class="question-line"><strong>(2) <span class="math-inline">x + 1/x = 2</span></strong></p>
+<blockquote class="answer-process">
 <p>原方程含有 <span class="math-inline">1/x</span>，未知数在分母中，不是整式方程，所以它本身不是一元二次方程。若两边同乘 <span class="math-inline">x</span>，会得到 <span class="math-inline">x² - 2x + 1 = 0</span>，但这是变形后的整式方程，不能改变原方程的类型判断。</p>
-<p>(3) <span class="math-inline">(x+1)² = x² + 3</span></p>
-<p>先化简：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">(x+1)² = x² + 2x + 1<br>x² + 2x + 1 = x² + 3<br>2x + 1 = 3</div></div>
+</blockquote>
+<p class="question-line"><strong>(3) <span class="math-inline">(x+1)² = x² + 3</span></strong></p>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">先化简：</div><div class="formula-body">(x+1)² = x² + 2x + 1<br>x² + 2x + 1 = x² + 3<br>2x + 1 = 3</div></div>
 <p>化简后最高次数是 1，所以不是一元二次方程。</p>
-<p>(4) <span class="math-inline">(a-1)x² + 2x - 3 = 0</span>，未知数为 <span class="math-inline">x</span></p>
+</blockquote>
+<p class="question-line"><strong>(4) <span class="math-inline">(a-1)x² + 2x - 3 = 0</span>，未知数为 <span class="math-inline">x</span></strong></p>
+<blockquote class="answer-process">
 <p>当 <span class="math-inline">a-1 ≠ 0</span>，即 <span class="math-inline">a ≠ 1</span> 时，二次项系数不为 0，是一元二次方程；当 <span class="math-inline">a=1</span> 时，方程变成 <span class="math-inline">2x-3=0</span>，不是一元二次方程。</p>
+</blockquote>
 </section>
 <section class="answer-card" id="2-解方程">
 <h2>2. 解方程</h2>
-<p>(1) <span class="math-inline">x² - 25 = 0</span></p>
+<p class="question-line"><strong>(1) <span class="math-inline">x² - 25 = 0</span></strong></p>
+<blockquote class="answer-process">
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² = 25<br>x = ±5</div></div>
 <p>答案：<span class="math-inline">x=5</span> 或 <span class="math-inline">x=-5</span>。</p>
-<p>(2) <span class="math-inline">3x² - 12 = 0</span></p>
+</blockquote>
+<p class="question-line"><strong>(2) <span class="math-inline">3x² - 12 = 0</span></strong></p>
+<blockquote class="answer-process">
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">3x² = 12<br>x² = 4<br>x = ±2</div></div>
 <p>答案：<span class="math-inline">x=2</span> 或 <span class="math-inline">x=-2</span>。</p>
-<p>(3) <span class="math-inline">2x² - 5x = 0</span></p>
+</blockquote>
+<p class="question-line"><strong>(3) <span class="math-inline">2x² - 5x = 0</span></strong></p>
+<blockquote class="answer-process">
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x(2x-5)=0<br>x=0 或 2x-5=0</div></div>
 <p>答案：<span class="math-inline">x=0</span> 或 <span class="math-inline">x=5/2</span>。</p>
-<p>(4) <span class="math-inline">(x-3)² = 16</span></p>
+</blockquote>
+<p class="question-line"><strong>(4) <span class="math-inline">(x-3)² = 16</span></strong></p>
+<blockquote class="answer-process">
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x-3 = ±4</div></div>
-<p>所以：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x=7 或 x=-1</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">所以：</div><div class="formula-body">x=7 或 x=-1</div></div>
+</blockquote>
 </section>
 <section class="answer-card" id="3-用因式分解法解方程">
 <h2>3. 用因式分解法解方程</h2>
-<p>(1) <span class="math-inline">x² - 5x + 6 = 0</span></p>
+<p class="question-line"><strong>(1) <span class="math-inline">x² - 5x + 6 = 0</span></strong></p>
+<blockquote class="answer-process">
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² - 5x + 6 = (x-2)(x-3)<br>(x-2)(x-3)=0</div></div>
 <p>答案：<span class="math-inline">x=2</span> 或 <span class="math-inline">x=3</span>。</p>
-<p>(2) <span class="math-inline">2x² + 5x - 3 = 0</span></p>
+</blockquote>
+<p class="question-line"><strong>(2) <span class="math-inline">2x² + 5x - 3 = 0</span></strong></p>
+<blockquote class="answer-process">
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">2x² + 5x - 3 = (2x-1)(x+3)<br>(2x-1)(x+3)=0</div></div>
 <p>答案：<span class="math-inline">x=1/2</span> 或 <span class="math-inline">x=-3</span>。</p>
-<p>(3) <span class="math-inline">6x² - 11x - 10 = 0</span></p>
+</blockquote>
+<p class="question-line"><strong>(3) <span class="math-inline">6x² - 11x - 10 = 0</span></strong></p>
+<blockquote class="answer-process">
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">6x² - 11x - 10 = (2x-5)(3x+2)<br>(2x-5)(3x+2)=0</div></div>
 <p>答案：<span class="math-inline">x=5/2</span> 或 <span class="math-inline">x=-2/3</span>。</p>
-<p>(4) <span class="math-inline">(x+2)(x-5) = 18</span></p>
-<p>先整理：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² - 3x - 10 = 18<br>x² - 3x - 28 = 0<br>(x-7)(x+4)=0</div></div>
+</blockquote>
+<p class="question-line"><strong>(4) <span class="math-inline">(x+2)(x-5) = 18</span></strong></p>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">先整理：</div><div class="formula-body">x² - 3x - 10 = 18<br>x² - 3x - 28 = 0<br>(x-7)(x+4)=0</div></div>
 <p>答案：<span class="math-inline">x=7</span> 或 <span class="math-inline">x=-4</span>。</p>
+</blockquote>
 </section>
 <section class="answer-card" id="4-用配方法解方程">
 <h2>4. 用配方法解方程</h2>
-<p>(1) <span class="math-inline">x² + 6x + 5 = 0</span></p>
+<p class="question-line"><strong>(1) <span class="math-inline">x² + 6x + 5 = 0</span></strong></p>
+<blockquote class="answer-process">
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² + 6x = -5<br>x² + 6x + 9 = 4<br>(x+3)² = 4<br>x+3 = ±2</div></div>
 <p>答案：<span class="math-inline">x=-1</span> 或 <span class="math-inline">x=-5</span>。</p>
-<p>(2) <span class="math-inline">x² - 4x - 1 = 0</span></p>
+</blockquote>
+<p class="question-line"><strong>(2) <span class="math-inline">x² - 4x - 1 = 0</span></strong></p>
+<blockquote class="answer-process">
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² - 4x = 1<br>x² - 4x + 4 = 5<br>(x-2)² = 5<br>x-2 = ±√(5)</div></div>
 <p>答案：<span class="math-inline">x=2+√(5)</span> 或 <span class="math-inline">x=2-√(5)</span>。</p>
+</blockquote>
 </section>
 <section class="answer-card" id="5-用公式法解方程">
 <h2>5. 用公式法解方程</h2>
-<p>(1) <span class="math-inline">3x² - 5x - 2 = 0</span></p>
-<p>这里 <span class="math-inline">a=3, b=-5, c=-2</span>。</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">Δ = b² - 4ac = (-5)² - 4·3·(-2) = 25 + 24 = 49<br>x = (5 ± √(49)) / 6 = (5 ± 7) / 6</div></div>
+<p class="question-line"><strong>(1) <span class="math-inline">3x² - 5x - 2 = 0</span></strong></p>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">这里 <span class="math-inline">a=3, b=-5, c=-2</span>。</div><div class="formula-body">Δ = b² - 4ac = (-5)² - 4·3·(-2) = 25 + 24 = 49<br>x = (5 ± √(49)) / 6 = (5 ± 7) / 6</div></div>
 <p>答案：<span class="math-inline">x=2</span> 或 <span class="math-inline">x=-1/3</span>。</p>
-<p>(2) <span class="math-inline">2x² + 2x - 1 = 0</span></p>
-<p>这里 <span class="math-inline">a=2, b=2, c=-1</span>。</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">Δ = 2² - 4·2·(-1) = 12<br>x = (-2 ± √(12)) / 4 = (-2 ± 2√(3)) / 4</div></div>
+</blockquote>
+<p class="question-line"><strong>(2) <span class="math-inline">2x² + 2x - 1 = 0</span></strong></p>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">这里 <span class="math-inline">a=2, b=2, c=-1</span>。</div><div class="formula-body">Δ = 2² - 4·2·(-1) = 12<br>x = (-2 ± √(12)) / 4 = (-2 ± 2√(3)) / 4</div></div>
 <p>答案：<span class="math-inline">x=(-1+√(3))/2</span> 或 <span class="math-inline">x=(-1-√(3))/2</span>。</p>
-<p>(3) <span class="math-inline">x² + 2x + 3 = 0</span></p>
+</blockquote>
+<p class="question-line"><strong>(3) <span class="math-inline">x² + 2x + 3 = 0</span></strong></p>
+<blockquote class="answer-process">
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">Δ = 2² - 4·1·3 = -8 &lt; 0</div></div>
 <p>答案：在实数范围内无解。</p>
+</blockquote>
 </section>
 <section class="answer-card" id="6-判断根的情况">
 <h2>6. 判断根的情况</h2>
-<p>(1) <span class="math-inline">x² - 4x + 4 = 0</span></p>
+<p class="question-line"><strong>(1) <span class="math-inline">x² - 4x + 4 = 0</span></strong></p>
+<blockquote class="answer-process">
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">Δ = (-4)² - 4·1·4 = 16 - 16 = 0</div></div>
 <p>答案：有两个相等的实数根。</p>
-<p>(2) <span class="math-inline">2x² - 3x - 1 = 0</span></p>
+</blockquote>
+<p class="question-line"><strong>(2) <span class="math-inline">2x² - 3x - 1 = 0</span></strong></p>
+<blockquote class="answer-process">
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">Δ = (-3)² - 4·2·(-1) = 9 + 8 = 17 &gt; 0</div></div>
 <p>答案：有两个不相等的实数根。</p>
-<p>(3) <span class="math-inline">5x² + 2x + 1 = 0</span></p>
+</blockquote>
+<p class="question-line"><strong>(3) <span class="math-inline">5x² + 2x + 1 = 0</span></strong></p>
+<blockquote class="answer-process">
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">Δ = 2² - 4·5·1 = 4 - 20 = -16 &lt; 0</div></div>
 <p>答案：没有实数根。</p>
+</blockquote>
 </section>
 <section class="answer-card" id="7-求参数-k">
 <h2>7. 求参数 <span class="math-inline">k</span></h2>
-<p>方程为：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² - 2kx + k + 3 = 0</div></div>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">方程为：</div><div class="formula-body">x² - 2kx + k + 3 = 0</div></div>
 <p>要有两个不相等的实数根，需要 <span class="math-inline">Δ &gt; 0</span>。</p>
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">Δ = (-2k)² - 4·1·(k+3)<br>      = 4k² - 4k - 12<br>      = 4(k²-k-3)</div></div>
-<p>所以：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">k² - k - 3 &gt; 0</div></div>
-<p>解对应二次方程：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">k² - k - 3 = 0<br>k = (1 ± √(13)) / 2</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">所以：</div><div class="formula-body">k² - k - 3 &gt; 0</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">解对应二次方程：</div><div class="formula-body">k² - k - 3 = 0<br>k = (1 ± √(13)) / 2</div></div>
 <p>因为二次项系数为正，不等式大于 0 时取两侧区间。</p>
-<p>答案：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">k &lt; (1-√(13))/2 或 k &gt; (1+√(13))/2</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">答案：</div><div class="formula-body">k &lt; (1-√(13))/2 或 k &gt; (1+√(13))/2</div></div>
+</blockquote>
 </section>
 <section class="answer-card" id="8-用韦达定理求值">
 <h2>8. 用韦达定理求值</h2>
+<blockquote class="answer-process">
 <p>方程：<span class="math-inline">2x² - 3x - 5 = 0</span>，两根为 <span class="math-inline">x1, x2</span>。</p>
-<p>由韦达定理：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x1 + x2 = -b/a = -(-3)/2 = 3/2<br>x1x2 = c/a = -5/2</div></div>
-<p>(1) 答案：<span class="math-inline">x1+x2=3/2</span>。</p>
-<p>(2) 答案：<span class="math-inline">x1x2=-5/2</span>。</p>
-<p>(3)</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">由韦达定理：</div><div class="formula-body">x1 + x2 = -b/a = -(-3)/2 = 3/2<br>x1x2 = c/a = -5/2</div></div>
+</blockquote>
+<p class="question-line"><strong>(1) 答案：<span class="math-inline">x1+x2=3/2</span>。</strong></p>
+<p class="question-line"><strong>(2) 答案：<span class="math-inline">x1x2=-5/2</span>。</strong></p>
+<p class="question-line"><strong>(3)</strong></p>
+<blockquote class="answer-process">
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x1² + x2² = (x1+x2)² - 2x1x2<br>            = (3/2)² - 2·(-5/2)<br>            = 9/4 + 5<br>            = 29/4</div></div>
-<p>(4)</p>
+</blockquote>
+<p class="question-line"><strong>(4)</strong></p>
+<blockquote class="answer-process">
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">1/x1 + 1/x2 = (x1+x2)/(x1x2)<br>            = (3/2)/(-5/2)<br>            = -3/5</div></div>
+</blockquote>
 </section>
 <section class="answer-card" id="9-由根作方程">
 <h2>9. 由根作方程</h2>
-<p>两根为：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">3+√(2), 3-√(2)</div></div>
-<p>两根和：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">(3+√(2)) + (3-√(2)) = 6</div></div>
-<p>两根积：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">(3+√(2))(3-√(2)) = 9 - 2 = 7</div></div>
-<p>所以方程可取：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² - 6x + 7 = 0</div></div>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">两根为：</div><div class="formula-body">3+√(2), 3-√(2)</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">两根和：</div><div class="formula-body">(3+√(2)) + (3-√(2)) = 6</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">两根积：</div><div class="formula-body">(3+√(2))(3-√(2)) = 9 - 2 = 7</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">所以方程可取：</div><div class="formula-body">x² - 6x + 7 = 0</div></div>
+</blockquote>
 </section>
 <section class="answer-card" id="10-分解因式">
 <h2>10. 分解因式</h2>
-<p>(1) <span class="math-inline">x² - 7x + 10</span></p>
+<p class="question-line"><strong>(1) <span class="math-inline">x² - 7x + 10</span></strong></p>
+<blockquote class="answer-process">
 <p>找两个数，和为 <span class="math-inline">-7</span>，积为 <span class="math-inline">10</span>，是 <span class="math-inline">-5</span> 和 <span class="math-inline">-2</span>。</p>
 <div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² - 7x + 10 = (x-5)(x-2)</div></div>
-<p>(2) <span class="math-inline">3x² + 10x + 8</span></p>
-<p>十字相乘：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">3x² + 10x + 8 = (3x+4)(x+2)</div></div>
+</blockquote>
+<p class="question-line"><strong>(2) <span class="math-inline">3x² + 10x + 8</span></strong></p>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">十字相乘：</div><div class="formula-body">3x² + 10x + 8 = (3x+4)(x+2)</div></div>
 <p>检验交叉项：<span class="math-inline">6x+4x=10x</span>。</p>
-<p>(3) <span class="math-inline">2x² + xy - 3y²</span></p>
-<p>把它看作关于 <span class="math-inline">x</span> 的二次式，分解为：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">2x² + xy - 3y² = (x-y)(2x+3y)</div></div>
+</blockquote>
+<p class="question-line"><strong>(3) <span class="math-inline">2x² + xy - 3y²</span></strong></p>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">把它看作关于 <span class="math-inline">x</span> 的二次式，分解为：</div><div class="formula-body">2x² + xy - 3y² = (x-y)(2x+3y)</div></div>
 <p>检验：<span class="math-inline">3xy-2xy=xy</span>。</p>
-<p>(4) <span class="math-inline">x² - xy - 6y² + x + 7y - 2</span></p>
-<p>尝试分解成两个一次因式。可验证：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">(x-3y+2)(x+2y-1)</div></div>
-<p>展开：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² + 2xy - x - 3xy - 6y² + 3y + 2x + 4y - 2<br>= x² - xy - 6y² + x + 7y - 2</div></div>
-<p>所以答案是：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">(x-3y+2)(x+2y-1)</div></div>
+</blockquote>
+<p class="question-line"><strong>(4) <span class="math-inline">x² - xy - 6y² + x + 7y - 2</span></strong></p>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">尝试分解成两个一次因式。可验证：</div><div class="formula-body">(x-3y+2)(x+2y-1)</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">展开：</div><div class="formula-body">x² + 2xy - x - 3xy - 6y² + 3y + 2x + 4y - 2<br>= x² - xy - 6y² + x + 7y - 2</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">所以答案是：</div><div class="formula-body">(x-3y+2)(x+2y-1)</div></div>
+</blockquote>
 </section>
 <section class="answer-card" id="11-解双二次方程">
 <h2>11. 解双二次方程</h2>
-<p>(1) <span class="math-inline">x⁴ - 13x² + 36 = 0</span></p>
-<p>令 <span class="math-inline">y=x²</span>，得：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">y² - 13y + 36 = 0<br>(y-4)(y-9)=0</div></div>
-<p>所以 <span class="math-inline">y=4</span> 或 <span class="math-inline">y=9</span>。</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x²=4 -&gt; x=±2<br>x²=9 -&gt; x=±3</div></div>
+<p class="question-line"><strong>(1) <span class="math-inline">x⁴ - 13x² + 36 = 0</span></strong></p>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">令 <span class="math-inline">y=x²</span>，得：</div><div class="formula-body">y² - 13y + 36 = 0<br>(y-4)(y-9)=0</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">所以 <span class="math-inline">y=4</span> 或 <span class="math-inline">y=9</span>。</div><div class="formula-body">x²=4 -&gt; x=±2<br>x²=9 -&gt; x=±3</div></div>
 <p>答案：<span class="math-inline">x=±2, ±3</span>。</p>
-<p>(2) <span class="math-inline">x⁴ + 5x² - 36 = 0</span></p>
-<p>令 <span class="math-inline">y=x²</span>，得：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">y² + 5y - 36 = 0<br>(y+9)(y-4)=0</div></div>
+</blockquote>
+<p class="question-line"><strong>(2) <span class="math-inline">x⁴ + 5x² - 36 = 0</span></strong></p>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">令 <span class="math-inline">y=x²</span>，得：</div><div class="formula-body">y² + 5y - 36 = 0<br>(y+9)(y-4)=0</div></div>
 <p>所以 <span class="math-inline">y=4</span> 或 <span class="math-inline">y=-9</span>。因为 <span class="math-inline">x²=-9</span> 在实数范围内无解，只保留 <span class="math-inline">x²=4</span>。</p>
 <p>答案：<span class="math-inline">x=±2</span>。</p>
-<p>(3) <span class="math-inline">x⁴ + 5x² + 4 = 0</span></p>
-<p>令 <span class="math-inline">y=x²</span>，得：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">y² + 5y + 4 = 0<br>(y+1)(y+4)=0</div></div>
+</blockquote>
+<p class="question-line"><strong>(3) <span class="math-inline">x⁴ + 5x² + 4 = 0</span></strong></p>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">令 <span class="math-inline">y=x²</span>，得：</div><div class="formula-body">y² + 5y + 4 = 0<br>(y+1)(y+4)=0</div></div>
 <p>所以 <span class="math-inline">y=-1</span> 或 <span class="math-inline">y=-4</span>。二者都小于 0，不能等于实数平方。</p>
 <p>答案：在实数范围内无解。</p>
+</blockquote>
 </section>
 <section class="answer-card" id="12-用换元法解方程">
 <h2>12. 用换元法解方程</h2>
-<p>(1) <span class="math-inline">(x² + 2x)² - 14(x² + 2x) - 15 = 0</span></p>
-<p>令：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">y = x² + 2x</div></div>
-<p>原方程化为：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">y² - 14y - 15 = 0<br>(y-15)(y+1)=0</div></div>
+<p class="question-line"><strong>(1) <span class="math-inline">(x² + 2x)² - 14(x² + 2x) - 15 = 0</span></strong></p>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">令：</div><div class="formula-body">y = x² + 2x</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">原方程化为：</div><div class="formula-body">y² - 14y - 15 = 0<br>(y-15)(y+1)=0</div></div>
 <p>所以 <span class="math-inline">y=15</span> 或 <span class="math-inline">y=-1</span>。</p>
-<p>当 <span class="math-inline">y=15</span>：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² + 2x = 15<br>x² + 2x - 15 = 0<br>(x+5)(x-3)=0</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">当 <span class="math-inline">y=15</span>：</div><div class="formula-body">x² + 2x = 15<br>x² + 2x - 15 = 0<br>(x+5)(x-3)=0</div></div>
 <p>得到 <span class="math-inline">x=-5</span> 或 <span class="math-inline">x=3</span>。</p>
-<p>当 <span class="math-inline">y=-1</span>：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² + 2x = -1<br>x² + 2x + 1 = 0<br>(x+1)²=0</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">当 <span class="math-inline">y=-1</span>：</div><div class="formula-body">x² + 2x = -1<br>x² + 2x + 1 = 0<br>(x+1)²=0</div></div>
 <p>得到 <span class="math-inline">x=-1</span>。</p>
 <p>答案：<span class="math-inline">x=-5, 3, -1</span>，其中 <span class="math-inline">-1</span> 是重根。</p>
-<p>(2) <span class="math-inline">(x² - 3x + 1)² - 11(x² - 3x + 1) + 10 = 0</span></p>
-<p>令：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">y = x² - 3x + 1</div></div>
-<p>原方程化为：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">y² - 11y + 10 = 0<br>(y-1)(y-10)=0</div></div>
+</blockquote>
+<p class="question-line"><strong>(2) <span class="math-inline">(x² - 3x + 1)² - 11(x² - 3x + 1) + 10 = 0</span></strong></p>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">令：</div><div class="formula-body">y = x² - 3x + 1</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">原方程化为：</div><div class="formula-body">y² - 11y + 10 = 0<br>(y-1)(y-10)=0</div></div>
 <p>所以 <span class="math-inline">y=1</span> 或 <span class="math-inline">y=10</span>。</p>
-<p>当 <span class="math-inline">y=1</span>：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² - 3x + 1 = 1<br>x² - 3x = 0<br>x(x-3)=0</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">当 <span class="math-inline">y=1</span>：</div><div class="formula-body">x² - 3x + 1 = 1<br>x² - 3x = 0<br>x(x-3)=0</div></div>
 <p>得到 <span class="math-inline">x=0</span> 或 <span class="math-inline">x=3</span>。</p>
-<p>当 <span class="math-inline">y=10</span>：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² - 3x + 1 = 10<br>x² - 3x - 9 = 0</div></div>
-<p>公式法：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">Δ = (-3)² - 4·1·(-9) = 45<br>x = (3 ± √(45))/2 = (3 ± 3√(5))/2</div></div>
-<p>答案：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x=0, x=3, x=(3+3√(5))/2, x=(3-3√(5))/2</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">当 <span class="math-inline">y=10</span>：</div><div class="formula-body">x² - 3x + 1 = 10<br>x² - 3x - 9 = 0</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">公式法：</div><div class="formula-body">Δ = (-3)² - 4·1·(-9) = 45<br>x = (3 ± √(45))/2 = (3 ± 3√(5))/2</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">答案：</div><div class="formula-body">x=0, x=3, x=(3+3√(5))/2, x=(3-3√(5))/2</div></div>
+</blockquote>
 </section>
 <section class="answer-card" id="13-解分式方程并检验">
 <h2>13. 解分式方程并检验</h2>
-<p>(1) <span class="math-inline">1/(x-1) + 1/(x+1) = 1</span></p>
+<p class="question-line"><strong>(1) <span class="math-inline">1/(x-1) + 1/(x+1) = 1</span></strong></p>
+<blockquote class="answer-process">
 <p>分母要求：<span class="math-inline">x ≠ 1</span> 且 <span class="math-inline">x ≠ -1</span>。</p>
-<p>两边同乘 <span class="math-inline">(x-1)(x+1)</span>：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x+1 + x-1 = x² - 1<br>2x = x² - 1<br>x² - 2x - 1 = 0</div></div>
-<p>公式法：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x = (2 ± √(4+4))/2 = 1 ± √(2)</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">两边同乘 <span class="math-inline">(x-1)(x+1)</span>：</div><div class="formula-body">x+1 + x-1 = x² - 1<br>2x = x² - 1<br>x² - 2x - 1 = 0</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">公式法：</div><div class="formula-body">x = (2 ± √(4+4))/2 = 1 ± √(2)</div></div>
 <p>检验：<span class="math-inline">1+√(2)</span> 和 <span class="math-inline">1-√(2)</span> 都不等于 <span class="math-inline">1</span> 或 <span class="math-inline">-1</span>，所以都不是增根。</p>
 <p>答案：<span class="math-inline">x=1+√(2)</span> 或 <span class="math-inline">x=1-√(2)</span>。</p>
-<p>(2) <span class="math-inline">3/(x-2) = x/(x-2) + 2</span></p>
+</blockquote>
+<p class="question-line"><strong>(2) <span class="math-inline">3/(x-2) = x/(x-2) + 2</span></strong></p>
+<blockquote class="answer-process">
 <p>分母要求：<span class="math-inline">x ≠ 2</span>。</p>
-<p>两边同乘 <span class="math-inline">x-2</span>：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">3 = x + 2(x-2)<br>3 = x + 2x - 4<br>3x = 7<br>x = 7/3</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">两边同乘 <span class="math-inline">x-2</span>：</div><div class="formula-body">3 = x + 2(x-2)<br>3 = x + 2x - 4<br>3x = 7<br>x = 7/3</div></div>
 <p>检验：<span class="math-inline">7/3 ≠ 2</span>，所以不是增根。</p>
 <p>答案：<span class="math-inline">x=7/3</span>。</p>
+</blockquote>
 </section>
 <section class="answer-card" id="14-解无理方程并检验">
 <h2>14. 解无理方程并检验</h2>
-<p>(1) <span class="math-inline">√(x+5) = x - 1</span></p>
+<p class="question-line"><strong>(1) <span class="math-inline">√(x+5) = x - 1</span></strong></p>
+<blockquote class="answer-process">
 <p>根号要求：<span class="math-inline">x+5 ≥ 0</span>，右边还要满足 <span class="math-inline">x-1 ≥ 0</span>，所以候选解应有 <span class="math-inline">x ≥ 1</span>。</p>
-<p>两边平方：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x+5 = (x-1)²<br>x+5 = x² - 2x + 1<br>x² - 3x - 4 = 0<br>(x-4)(x+1)=0</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">两边平方：</div><div class="formula-body">x+5 = (x-1)²<br>x+5 = x² - 2x + 1<br>x² - 3x - 4 = 0<br>(x-4)(x+1)=0</div></div>
 <p>候选根：<span class="math-inline">x=4</span> 或 <span class="math-inline">x=-1</span>。</p>
-<p>检验：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x=4: √(9)=3, x-1=3，成立<br>x=-1: √(4)=2, x-1=-2，不成立</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">检验：</div><div class="formula-body">x=4: √(9)=3, x-1=3，成立<br>x=-1: √(4)=2, x-1=-2，不成立</div></div>
 <p>答案：<span class="math-inline">x=4</span>。</p>
-<p>(2) <span class="math-inline">√(2x+3) = x</span></p>
+</blockquote>
+<p class="question-line"><strong>(2) <span class="math-inline">√(2x+3) = x</span></strong></p>
+<blockquote class="answer-process">
 <p>根号要求：<span class="math-inline">2x+3 ≥ 0</span>，且右边 <span class="math-inline">x</span> 必须非负，所以候选解应有 <span class="math-inline">x ≥ 0</span>。</p>
-<p>两边平方：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">2x+3 = x²<br>x² - 2x - 3 = 0<br>(x-3)(x+1)=0</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">两边平方：</div><div class="formula-body">2x+3 = x²<br>x² - 2x - 3 = 0<br>(x-3)(x+1)=0</div></div>
 <p>候选根：<span class="math-inline">x=3</span> 或 <span class="math-inline">x=-1</span>。</p>
-<p>检验：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x=3: √(9)=3，成立<br>x=-1: √(1)=1，但右边为 -1，不成立</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">检验：</div><div class="formula-body">x=3: √(9)=3，成立<br>x=-1: √(1)=1，但右边为 -1，不成立</div></div>
 <p>答案：<span class="math-inline">x=3</span>。</p>
+</blockquote>
 </section>
 <section class="answer-card" id="15-矩形面积应用题">
 <h2>15. 矩形面积应用题</h2>
+<blockquote class="answer-process">
 <p>设宽为 <span class="math-inline">x</span> 厘米，则长为 <span class="math-inline">x+6</span> 厘米。</p>
-<p>根据面积为 40：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x(x+6)=40<br>x²+6x-40=0<br>(x+10)(x-4)=0</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">根据面积为 40：</div><div class="formula-body">x(x+6)=40<br>x²+6x-40=0<br>(x+10)(x-4)=0</div></div>
 <p>得到 <span class="math-inline">x=4</span> 或 <span class="math-inline">x=-10</span>。宽不能为负，所以取 <span class="math-inline">x=4</span>。</p>
 <p>答案：宽 4 厘米，长 10 厘米。</p>
+</blockquote>
 </section>
 <section class="answer-card" id="16-生产计划应用题">
 <h2>16. 生产计划应用题</h2>
+<blockquote class="answer-process">
 <p>设原计划每天生产 <span class="math-inline">x</span> 个零件，则总量为 <span class="math-inline">10x</span>。</p>
 <p>实际提前 2 天完成，所以实际用了 8 天；实际每天生产 <span class="math-inline">x+20</span> 个。</p>
-<p>列方程：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">8(x+20)=10x<br>8x+160=10x<br>2x=160<br>x=80</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">列方程：</div><div class="formula-body">8(x+20)=10x<br>8x+160=10x<br>2x=160<br>x=80</div></div>
 <p>答案：原计划每天生产 80 个零件。</p>
+</blockquote>
 </section>
 <section class="answer-card" id="17-一个数与倒数之和">
 <h2>17. 一个数与倒数之和</h2>
-<p>设这个数为 <span class="math-inline">x</span>。因为有倒数，所以 <span class="math-inline">x ≠ 0</span>。</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x + 1/x = 5/2</div></div>
-<p>两边同乘 <span class="math-inline">2x</span>：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">2x² + 2 = 5x<br>2x² - 5x + 2 = 0<br>(2x-1)(x-2)=0</div></div>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">设这个数为 <span class="math-inline">x</span>。因为有倒数，所以 <span class="math-inline">x ≠ 0</span>。</div><div class="formula-body">x + 1/x = 5/2</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">两边同乘 <span class="math-inline">2x</span>：</div><div class="formula-body">2x² + 2 = 5x<br>2x² - 5x + 2 = 0<br>(2x-1)(x-2)=0</div></div>
 <p>答案：<span class="math-inline">x=1/2</span> 或 <span class="math-inline">x=2</span>。</p>
+</blockquote>
 </section>
 <section class="answer-card" id="18-连续正整数">
 <h2>18. 连续正整数</h2>
-<p>设两个连续正整数为 <span class="math-inline">n</span> 和 <span class="math-inline">n+1</span>。</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">n(n+1)=156<br>n²+n-156=0</div></div>
-<p>分解因式：</p>
-<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">n²+n-156 = (n-12)(n+13)</div></div>
+<blockquote class="answer-process">
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">设两个连续正整数为 <span class="math-inline">n</span> 和 <span class="math-inline">n+1</span>。</div><div class="formula-body">n(n+1)=156<br>n²+n-156=0</div></div>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-note">分解因式：</div><div class="formula-body">n²+n-156 = (n-12)(n+13)</div></div>
 <p>所以 <span class="math-inline">n=12</span> 或 <span class="math-inline">n=-13</span>。因为题目要求正整数，舍去 <span class="math-inline">-13</span>。</p>
 <p>答案：这两个数是 12 和 13。</p>
+</blockquote>
 </section>
 </main>
 </div>
