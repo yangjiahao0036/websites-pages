@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第八章单元综合复习练习题</title>
+<style>
+:root {
+  --ink: #1f2933;
+  --muted: #637083;
+  --line: #d8e0ea;
+  --paper: #ffffff;
+  --soft: #f6f8fb;
+  --soft2: #eef5f8;
+  --accent: #2c7a7b;
+  --accent2: #4a6fa5;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #edf2f7;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans CJK SC", "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+  line-height: 1.75;
+  font-size: 17px;
+}
+.layout { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 22px; padding: 28px 18px; }
+.toc { position: sticky; top: 18px; align-self: start; max-height: calc(100vh - 36px); overflow: auto; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
+.toc-title { font-weight: 700; color: #12355b; margin-bottom: 10px; }
+.toc a { display: block; color: #34495e; text-decoration: none; border-radius: 5px; padding: 5px 7px; margin: 2px 0; }
+.toc a:hover { background: var(--soft2); color: #12355b; }
+.toc-h1 { font-weight: 700; }
+.toc-h2 { font-size: 14px; padding-left: 15px !important; }
+main { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 42px 52px 56px; box-shadow: 0 10px 30px rgba(31, 41, 51, 0.08); }
+h1 { font-size: 34px; line-height: 1.25; color: #12355b; margin: 0 0 24px; padding-bottom: 16px; border-bottom: 2px solid var(--line); letter-spacing: 0; }
+h2 { font-size: 25px; color: #164e63; margin: 34px 0 14px; padding-left: 13px; border-left: 6px solid var(--accent); letter-spacing: 0; }
+h3 { font-size: 20px; color: #243b53; margin: 26px 0 10px; letter-spacing: 0; }
+p { margin: 8px 0 12px; }
+ol, ul { margin: 8px 0 14px 1.5em; padding: 0; }
+li { margin: 5px 0; padding-left: 3px; }
+.formula-block { margin: 13px 0 18px; border: 1px solid var(--line); border-left: 6px solid var(--accent2); border-radius: 8px; background: linear-gradient(90deg, #f5f9ff, #fbfdff); overflow: hidden; }
+.formula-mark { font-size: 12px; color: #52616f; background: #e8f0fb; padding: 5px 12px; border-bottom: 1px solid var(--line); letter-spacing: 0.04em; }
+.formula-body { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: 17px; line-height: 1.75; padding: 12px 15px; color: #102a43; white-space: normal; }
+.formula-note { padding: 8px 11px 0; color: #52616f; font-size: 15px; font-weight: 700; }
+.math-inline { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; background: #f2f6fa; border: 1px solid var(--line); border-radius: 5px; padding: 1px 6px; color: #102a43; white-space: nowrap; }
+.answer-card { margin: 24px 0; padding: 20px 22px 22px; border: 1px solid #cfd9e6; border-radius: 8px; background: #ffffff; box-shadow: 0 8px 22px rgba(31, 41, 51, 0.07); break-inside: avoid; }
+.answer-card h2 { margin: 0 0 15px; padding: 0 0 10px; border-left: 0; border-bottom: 1px solid var(--line); color: #164e63; }
+.answer-card p:first-of-type { margin-top: 0; }
+.answer-card .formula-block { margin: 6px 0 11px 14px; padding: 0; border: 0 !important; border-left: 0 !important; border-radius: 0; background: transparent !important; box-shadow: none; overflow: visible; }
+.answer-card .formula-mark { display: none; }
+.answer-card .formula-note { padding: 0 0 2px; color: #52616f; font-size: 15px; font-weight: 700; }
+.answer-card .formula-body { padding: 0; font-size: 16px; line-height: 1.72; color: #1f2933; }
+.answer-card .formula-note + .formula-body { padding-top: 0; }
+.answer-card .math-inline { background: transparent; border: 0; border-radius: 0; padding: 0; color: inherit; font-family: inherit; white-space: normal; }
+.answer-card .question-line { margin-top: 14px; margin-bottom: 7px; color: #102a43; }
+.answer-process { margin: 7px 0 15px; padding: 8px 13px; border-left: 4px solid #8aa4c2; background: #f8fafc; color: #243b53; }
+.answer-process p { margin: 6px 0 9px; }
+.answer-process .formula-block { margin: 6px 0 11px 0; }
+.answer-process .formula-note { color: #3f5f7f; }
+@media (max-width: 880px) {
+  .layout { display: block; padding: 0; }
+  .toc { position: static; max-height: none; border-radius: 0; border-left: 0; border-right: 0; }
+  main { border: 0; border-radius: 0; padding: 26px 18px 42px; box-shadow: none; }
+  h1 { font-size: 27px; }
+  h2 { font-size: 22px; }
+}
+@media print {
+  body { background: white; font-size: 12pt; }
+  .layout { display: block; max-width: none; padding: 0; }
+  .toc { display: none; }
+  main { border: 0; box-shadow: none; padding: 0; }
+  h1, h2, h3 { break-after: avoid; }
+  .formula-block, .answer-card { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc"><div class="toc-title">目录</div><a class="toc-h1" href="#第八章单元综合复习练习题">第八章单元综合复习练习题</a>
+<a class="toc-h2" href="#一-简单综合题-10-道">一、简单综合题 10 道</a>
+<a class="toc-h2" href="#二-中等综合题-7-道">二、中等综合题 7 道</a>
+<a class="toc-h2" href="#三-拔高综合题-3-道">三、拔高综合题 3 道</a></nav>
+<main>
+<h1 id="第八章单元综合复习练习题">第八章单元综合复习练习题</h1>
+<p>共 20 道综合题：简单综合题 10 道，中等综合题 7 道，拔高综合题 3 道。</p>
+<h2 id="一-简单综合题-10-道">一、简单综合题 10 道</h2>
+<h3 id="1-方程整理与求解">1. 方程整理与求解</h3>
+<p>已知方程：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">(x+2)(x-3)=2x-6</div></div>
+<p>(1) 将方程化为一般形式 <span class="math-inline">a·x²+b·x+c=0</span>。</p>
+<p>(2) 判断它是否为一元二次方程。</p>
+<p>(3) 解这个方程。</p>
+<h3 id="2-解法选择与验算">2. 解法选择与验算</h3>
+<p>解方程：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">2x² - 7x + 3 = 0</div></div>
+<p>要求：</p>
+<p>(1) 先说明你准备用哪种方法求解。</p>
+<p>(2) 求出方程的两个根。</p>
+<p>(3) 将所得根代入原方程验算其中一个根。</p>
+<h3 id="3-判别式与根的情况">3. 判别式与根的情况</h3>
+<p>已知方程：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² - 6x + 9 = 0</div></div>
+<p>(1) 计算判别式。</p>
+<p>(2) 判断方程根的情况。</p>
+<p>(3) 解方程，并说明结果是否与判别式判断一致。</p>
+<h3 id="4-不完全方程与因式分解">4. 不完全方程与因式分解</h3>
+<p>解方程：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">3x² - 12x = 0</div></div>
+<p>要求：</p>
+<p>(1) 说明它属于哪类不完全一元二次方程。</p>
+<p>(2) 用因式分解法求解。</p>
+<p>(3) 写出两根的和与积。</p>
+<h3 id="5-二次三项式与方程根">5. 二次三项式与方程根</h3>
+<p>已知二次三项式：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² - 5x + 6</div></div>
+<p>(1) 求这个二次三项式的根。</p>
+<p>(2) 将它分解因式。</p>
+<p>(3) 说明二次三项式的根与对应一元二次方程的根有什么关系。</p>
+<h3 id="6-公式法与近似思想">6. 公式法与近似思想</h3>
+<p>解方程：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² - 3x - 1 = 0</div></div>
+<p>要求：</p>
+<p>(1) 用公式法求精确解。</p>
+<p>(2) 判断两个根分别在哪两个相邻整数之间。</p>
+<h3 id="7-韦达定理与直接求解对照">7. 韦达定理与直接求解对照</h3>
+<p>已知方程：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² - 7x + 10 = 0</div></div>
+<p>(1) 不解方程，求两根的和与积。</p>
+<p>(2) 解方程求出两根。</p>
+<p>(3) 验证两根的和与积是否符合韦达定理。</p>
+<h3 id="8-几何建模">8. 几何建模</h3>
+<p>一个矩形的面积是 60 平方厘米，长比宽多 7 厘米。</p>
+<p>(1) 设宽为 <span class="math-inline">x</span> 厘米，列出方程。</p>
+<p>(2) 解方程。</p>
+<p>(3) 根据实际意义确定矩形的长和宽。</p>
+<h3 id="9-由实际问题判断根">9. 由实际问题判断根</h3>
+<p>某数的平方比这个数的 5 倍多 6。</p>
+<p>(1) 设这个数为 <span class="math-inline">x</span>，列出方程。</p>
+<p>(2) 解方程。</p>
+<p>(3) 如果要求这个数是正数，应取哪个根？</p>
+<h3 id="10-根与方程构造">10. 根与方程构造</h3>
+<p>已知一个一元二次方程的两个根是 <span class="math-inline">2</span> 和 <span class="math-inline">5</span>。</p>
+<p>(1) 写出一个二次项系数为 1 的一元二次方程。</p>
+<p>(2) 写出一个二次项系数为 3 的一元二次方程。</p>
+<p>(3) 分别指出两个方程中两根的和与积。</p>
+<h2 id="二-中等综合题-7-道">二、中等综合题 7 道</h2>
+<h3 id="11-配方法-公式法与判别式">11. 配方法、公式法与判别式</h3>
+<p>已知方程：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² - 4x - 2 = 0</div></div>
+<p>(1) 用配方法解方程。</p>
+<p>(2) 用公式法解方程。</p>
+<p>(3) 比较两种方法得到的结果是否一致。</p>
+<p>(4) 计算判别式，并说明方程有几个实数根。</p>
+<h3 id="12-含参数方程的根的情况">12. 含参数方程的根的情况</h3>
+<p>已知关于 <span class="math-inline">x</span> 的方程：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² - 2kx + k + 2 = 0</div></div>
+<p>(1) 求方程有两个不相等实数根时 <span class="math-inline">k</span> 的取值范围。</p>
+<p>(2) 求方程有两个相等实数根时 <span class="math-inline">k</span> 的值。</p>
+<p>(3) 当 <span class="math-inline">k=3</span> 时，求方程的两个根。</p>
+<h3 id="13-韦达定理综合计算">13. 韦达定理综合计算</h3>
+<p>已知方程：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">2x² - 5x - 3 = 0</div></div>
+<p>它的两个根为 <span class="math-inline">x1, x2</span>。</p>
+<p>(1) 不解方程，求 <span class="math-inline">x1+x2</span> 和 <span class="math-inline">x1x2</span>。</p>
+<p>(2) 求 <span class="math-inline">x1²+x2²</span>。</p>
+<p>(3) 求 <span class="math-inline">1/x1 + 1/x2</span>。</p>
+<p>(4) 再解方程，验证上述结果。</p>
+<h3 id="14-二次三项式因式分解与方程求解">14. 二次三项式因式分解与方程求解</h3>
+<p>已知二次三项式：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">2x² - 7x + 3</div></div>
+<p>(1) 求对应方程 <span class="math-inline">2x²-7x+3=0</span> 的两个根。</p>
+<p>(2) 利用根将二次三项式分解因式。</p>
+<p>(3) 用十字相乘法再分解一次，比较结果是否一致。</p>
+<h3 id="15-双二次方程与实数根判断">15. 双二次方程与实数根判断</h3>
+<p>解方程：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x⁴ - 5x² + 4 = 0</div></div>
+<p>要求：</p>
+<p>(1) 说明为什么可以使用换元法。</p>
+<p>(2) 令 <span class="math-inline">y=x²</span>，化为关于 <span class="math-inline">y</span> 的一元二次方程。</p>
+<p>(3) 求出 <span class="math-inline">y</span> 的值。</p>
+<p>(4) 求出原方程的所有实数根。</p>
+<h3 id="16-分式方程与增根检验">16. 分式方程与增根检验</h3>
+<p>解分式方程：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">1/(x-1) + 2/(x+1) = 1</div></div>
+<p>要求：</p>
+<p>(1) 写出 <span class="math-inline">x</span> 的取值限制。</p>
+<p>(2) 去分母，化为整式方程。</p>
+<p>(3) 解所得方程。</p>
+<p>(4) 检验是否有增根。</p>
+<h3 id="17-工程问题建模">17. 工程问题建模</h3>
+<p>甲、乙两人合作完成一项工作需要 12 天。已知甲单独完成所需时间比乙少 10 天。</p>
+<p>(1) 设甲单独完成需要 <span class="math-inline">x</span> 天，表示乙单独完成所需时间。</p>
+<p>(2) 根据工作效率列方程。</p>
+<p>(3) 解方程。</p>
+<p>(4) 根据实际意义确定甲、乙单独完成各需要多少天。</p>
+<h2 id="三-拔高综合题-3-道">三、拔高综合题 3 道</h2>
+<h3 id="18-无理方程与验根">18. 无理方程与验根</h3>
+<p>解方程：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">√(x+4) = x - 2</div></div>
+<p>要求：</p>
+<p>(1) 写出根号和等式右边对 <span class="math-inline">x</span> 的限制。</p>
+<p>(2) 两边平方，化为一元二次方程。</p>
+<p>(3) 解所得方程。</p>
+<p>(4) 逐一验根，说明哪些是原方程的根。</p>
+<h3 id="19-参数-韦达定理与判别式综合">19. 参数、韦达定理与判别式综合</h3>
+<p>已知关于 <span class="math-inline">x</span> 的方程：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x² - (m+3)x + 2m + 2 = 0</div></div>
+<p>它的两个实数根为 <span class="math-inline">x1, x2</span>，且满足：</p>
+<div class="formula-block"><div class="formula-mark">公式</div><div class="formula-body">x1² + x2² = 13</div></div>
+<p>(1) 用韦达定理表示 <span class="math-inline">x1+x2</span> 和 <span class="math-inline">x1x2</span>。</p>
+<p>(2) 利用 <span class="math-inline">x1²+x2²=(x1+x2)²-2x1x2</span> 建立关于 <span class="math-inline">m</span> 的方程。</p>
+<p>(3) 求 <span class="math-inline">m</span> 的值。</p>
+<p>(4) 检查所得 <span class="math-inline">m</span> 是否使原方程有实数根。</p>
+<h3 id="20-综合应用题-行程问题">20. 综合应用题：行程问题</h3>
+<p>甲、乙两地相距 120 千米。一辆汽车从甲地开往乙地，返回时每小时比去时少行 10 千米，因此返回所用时间比去时多 1 小时。</p>
+<p>(1) 设去时速度为 <span class="math-inline">x</span> 千米/小时，表示返回速度。</p>
+<p>(2) 根据时间关系列方程。</p>
+<p>(3) 将方程化为一元二次方程并求解。</p>
+<p>(4) 判断所得根是否符合实际意义。</p>
+<p>(5) 求去时和返回时的速度。</p>
+</main>
+</div>
+</body>
+</html>
